@@ -1,0 +1,91 @@
+
+
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.grid-container > * {
+    box-shadow:-1px 1px 7px 0px rgba (0, 0, 0, 0.75);
+    border-radius: 4 px;
+    padding: 10 px;
+    text-align: center;
+}
+
+.header {
+    grid-area: header;
+    background-color: #85aedd;
+}
+
+.navbar{
+    grid-area: navbar;
+    background-color: #afd6af;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f5f5f5
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: #fdcfcf;
+}
+
+.footer {
+    grid-area:footer;
+    background-color: #8c96a0;
+}
+
+/*Mobile*/
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "header"    100px
+        "navbar"    50px
+        "main"      auto
+        "sidebar"   100px
+        "footer"    100px;
+}
+
+/*Tablet*/
+@media (min-width:600px ) {
+
+    .grid-container {
+        grid-template-columns: 200px auto;
+        grid-template-rows:100px 50px auto 100px;
+
+        grid-template:
+        "header header" 100px
+        "navbar navbar" 50px
+        "sidebar main" auto
+        "footer footer" 100px / 
+        200px auto;
+        }
+
+}
+
+/*Escritorio*/
+@media (min-width:900px ) {
+
+    .grid-container {
+        grid-template:
+        "header header header" 100px
+        "navbar main sidebar" auto
+        "footer footer footer" 100px / 
+        200px auto 200px;
+        }
+
+}
